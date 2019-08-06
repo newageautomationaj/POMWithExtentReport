@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Test Suite]" parallel="methods">
+  <parameter name="appURL" value="https://google.com"/>
+  <parameter name="browserType" value="chrome"/>
+  <listeners>
+    <listener class-name="com.vsysq.base.TestListener"/>
+  </listeners>
+  <test thread-count="2" name="Admin Tests(failed)" parallel="methods">
+    <classes>
+      <class name="com.tests.SignInPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="initializeTestBaseSetup"/>
+          <include name="verifySignInFunction"/>
+        </methods>
+      </class> <!-- com.tests.SignInPageTest -->
+      <class name="com.tests.CreateAccountTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="verifyCreateAnAccountPage"/>
+          <include name="initializeTestBaseSetup"/>
+        </methods>
+      </class> <!-- com.tests.CreateAccountTest -->
+      <class name="com.tests.BasePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="initializeTestBaseSetup"/>
+          <include name="baseTest1"/>
+        </methods>
+      </class> <!-- com.tests.BasePageTest -->
+    </classes>
+  </test> <!-- Admin Tests(failed) -->
+</suite> <!-- Failed suite [Test Suite] -->
